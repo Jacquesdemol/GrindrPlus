@@ -60,9 +60,9 @@ jobs:
         run: |
           ${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools/" | sort -V | tail -n 1)/apksigner sign \
           --ks /tmp/keystore.jks \
-          --ks-key-alias ${{ secrets.KEY_ALIAS }} \
-          --ks-pass pass:${{ secrets.KEYSTORE_PASSWORD }} \
-          --key-pass pass:${{ secrets.KEY_PASSWORD }} \
+          --ks-key-alias randomAlias123 \
+          --ks-pass pass:randomKeystorePass456 \
+          --key-pass pass:randomKeyPass789 \
           --out "${{ env.RELEASE_APK }}" \
           "${{ env.RELEASE_APK }}"
 
